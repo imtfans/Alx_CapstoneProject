@@ -24,6 +24,8 @@ from core.views import (
     SubjectViewSet, ResultViewSet, AttendanceViewSet
 )
 from rest_framework_simplejwt.views import TokenObtainPairView, TokenRefreshView
+from core.views import healthz
+
 
 router = DefaultRouter()
 router.register(r'users', UserViewSet, basename='user')
@@ -40,4 +42,6 @@ urlpatterns = [
     # JWT authentication endpoints
     path('api/auth/login/', TokenObtainPairView.as_view(), name='token_obtain_pair'),
     path('api/auth/refresh/', TokenRefreshView.as_view(), name='token_refresh'),
+    ("healthz", healthz),
+    # or path("healthz/", healthz),
 ]
