@@ -4,3 +4,5 @@ djangorestframework-simplejwt>=5.2
 psycopg2-binary>=2.9
 python-dotenv>=1.0.0
 pytest-django>=4.5
+dj-database-url
+gunicorn>=21.2.0
