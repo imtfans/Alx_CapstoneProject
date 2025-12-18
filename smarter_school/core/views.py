@@ -8,7 +8,7 @@ from .serializers import (
     ResultSerializer, AttendanceSerializer
 )
 from .permissions import IsAdmin, IsTeacher, IsParent, IsAdminOrReadOnly
-
+from django.http import JsonResponse
 User = get_user_model()
 
 
@@ -64,3 +64,9 @@ class AttendanceViewSet(viewsets.ModelViewSet):
     queryset = Attendance.objects.all()
     serializer_class = AttendanceSerializer
     permission_classes = [IsTeacher]
+
+
+
+def healthz(request):
+    return JsonResponse({"status": "ok"})
+
