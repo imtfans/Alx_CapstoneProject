@@ -24,12 +24,10 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # Secret Key & Debug
 # ---------------------------------------------------------
 SECRET_KEY = config('SECRET_KEY', default='unsafe-dev-key')
-DEBUG = config('DEBUG', default=True, cast=bool)
 
-# ---------------------------------------------------------
-# Allowed Hosts
-# ---------------------------------------------------------
-ALLOWED_HOSTS = config('ALLOWED_HOSTS', default='*').split(',')
+
+DEBUG = False
+ALLOWED_HOSTS = ["smarter-school.onrender.com"]
 
 # ---------------------------------------------------------
 # Installed Apps

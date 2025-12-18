@@ -7,6 +7,7 @@ from core.views import (
     healthz
 )
 from rest_framework_simplejwt.views import TokenObtainPairView, TokenRefreshView
+from core.views import home
 
 router = DefaultRouter()
 router.register(r'users', UserViewSet, basename='user')
@@ -23,3 +24,6 @@ urlpatterns = [
     path('api/auth/refresh/', TokenRefreshView.as_view()),
     path('healthz/', healthz),  # ✅ THIS IS THE FIX
 ]
+
+
+
